@@ -2,11 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\BlogModel;
+
 class Pages extends BaseController
 {
     public function index()
     {
-        echo view('templates/header');
+        $model = new BlogModel();
+        $data['news'] = $model->getPosts();
+
+        echo view('templates/header', $data);
         echo view('pages/home');
         echo view('templates/footer');
     }
