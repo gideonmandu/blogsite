@@ -19,4 +19,14 @@ class BlogModel extends Model
             ->where(['slug' => $slug])
             ->first();
     }
+
+    public function getPost($id)
+    {
+        return $this->find($id);
+    }
+
+    public function deletePost($id)
+    {
+        $this->delete($id);
+    }
 }
