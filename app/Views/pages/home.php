@@ -13,17 +13,23 @@
         <h1 class="display-4 fw-bolder">Dummy Blog site</h1>
         <p>Demo Code Igniter Project</p>
         <hr>
-        <p class="text-secondary">Trying out php 8</p>
-        <p><a href="/about" class="btn btn-primary btn-lg" role="button">Learn More</a></p>
+        <p class="text-secondary h3">Available Articles</p>
     </div>
 </section>
 <section class="container-fluid">
-    <div class="container-sm">
+    <div class="container-sm py-3">
         <!-- Checking if news articles exist -->
+
         <?php if ($news) : ?>
-            <?php foreach ($news as $newsItem) : ?>
-                <h3><a href="/blog/<?= $newsItem['slug'] ?>"><?= $newsItem['title'] ?></a></h3>
-            <?php endforeach; ?>
+            <ul class="list-group list-group-numbered">
+                <?php foreach ($news as $newsItem) : ?>
+                    <li class="list-group-item list-group-item-action list-group-item-light">
+                        <a class="text-decoration-none text-reset" href="/blog/<?= $newsItem['slug'] ?>">
+                            <?= $newsItem['title'] ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         <?php else : ?>
             <p class="text-center">No posts have been found</p>
         <?php endif; ?>
