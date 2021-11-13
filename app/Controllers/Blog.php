@@ -88,4 +88,33 @@ class Blog extends BaseController
 
         return redirect()->to('/');
     }
+
+    function search()
+    {
+        helper('form');
+        $model = new BlogModel();
+        if (!$this->validate(
+            // validate form input
+            [
+                'title' => 'required|min_length[1]|max_length[255]',
+            ]
+        )) {
+            echo view('templates/header');
+            echo view('pages/home');
+            echo view('templates/footer');
+        } else {
+            // searching blog post
+            // $data['news'] = $model->where(
+            //     'title',
+            //     $this->request->getVar('title')
+            // )
+            //     ->findAll();
+            $title = $this->request->getVar('title');
+            $data['news'] = $model->like('title', $title)
+                ->findAll();
+            echo view('templates/header', $data);
+            echo view('pages/home');
+            echo view('templates/footer');
+        }
+    }
 }
