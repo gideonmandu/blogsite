@@ -23,7 +23,7 @@
             <ul class="list-group list-group-numbered">
                 <?php foreach ($news as $newsItem) : ?>
                     <li class="list-group-item list-group-item-action list-group-item-light">
-                        <a class="text-decoration-none text-reset" href="/blog/<?= $newsItem['slug'] ?>">
+                        <a class="text-decoration-none text-reset" href="/blogsite/blog/<?= $newsItem['slug'] ?>">
                             <?= $newsItem['title'] ?>
                         </a>
                     </li>

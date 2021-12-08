@@ -37,6 +37,7 @@ $routes->get('/blog/search', 'Pages::index');
 $routes->get('/blog/update/(:any)', 'Blog::update/$1');
 $routes->get('/blog/delete/(:any)', 'Blog::delete/$1');
 $routes->get('/blog/(:any)', 'Blog::post/$1');
+// placed last since it matches any type
 $routes->get('(:any)', 'Pages::showme/$1');
 
 /*

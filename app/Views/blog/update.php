@@ -3,7 +3,7 @@
     <?php if ($_POST) : ?>
         <?= \Config\Services::validation()->listErrors(); ?>
     <?php endif; ?>
-    <form class="mx-auto" action="/blog/update/<?= $post['id'] ?>" method="POST">
+    <form class="mx-auto" action="/blogsite/blog/update/<?= $post['id'] ?>" method="POST">
         <div class="form-group">
             <label for="title" class="fw-bold form-label">Title:</label>
             <input type="text" name="title" class="form-control" id="title" value="<?= $post['title'] ?>">
