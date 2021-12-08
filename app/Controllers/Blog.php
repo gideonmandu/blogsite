@@ -12,8 +12,8 @@ class Blog extends BaseController
 
         $data['post'] = $model->getPosts($slug);
 
-        echo view('templates/header', $data);
-        echo view('blog/post');
+        echo view('templates/header');
+        echo view('blog/post', $data);
         echo view('templates/footer');
     }
 

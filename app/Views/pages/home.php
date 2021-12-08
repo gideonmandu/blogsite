@@ -19,12 +19,12 @@
     <div class="container-sm py-3">
         <!-- Checking if news articles exist -->
 
-        <?php if ($news) : ?>
+        <?php if ($posts) : ?>
             <ul class="list-group list-group-numbered">
-                <?php foreach ($news as $newsItem) : ?>
+                <?php foreach ($posts as $post) : ?>
                     <li class="list-group-item list-group-item-action list-group-item-light">
-                        <a class="text-decoration-none text-reset" href="/blogsite/blog/<?= $newsItem['slug'] ?>">
-                            <?= $newsItem['title'] ?>
+                        <a class="text-decoration-none text-reset" href="/blogsite/blog/<?= $post['slug'] ?>">
+                            <?= $post['title'] ?>
                         </a>
                     </li>
                 <?php endforeach; ?>

@@ -9,10 +9,10 @@ class Pages extends BaseController
     public function index()
     {
         $model = new BlogModel();
-        $data['news'] = $model->getPosts();
+        $data['posts'] = $model->getPosts();
 
-        echo view('templates/header', $data);
-        echo view('pages/home');
+        echo view('templates/header');
+        echo view('pages/home', $data);
         echo view('templates/footer');
     }
 
